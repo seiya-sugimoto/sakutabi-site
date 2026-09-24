@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sakutabi-site",
+  "compatibility_date": "2026-09-25",
+  // アクセスログを Cloudflare 側に持たない。
+  // App Privacy で申告する収集データと揃えるため（karada-log-site と同じ方針）。
+  "observability": {
+    "enabled": false
+  },
+  "assets": {
+    "directory": "./public",
+    // App Store Connect とアプリ内リンクは .html 付きのURLを指す。
+    // 既定の auto-trailing-slash は /privacy.html を /privacy へ 307 で飛ばすため、
+    // .html をそのまま 200 で返す "none" にする。
+    "html_handling": "none"
+  }
+}
