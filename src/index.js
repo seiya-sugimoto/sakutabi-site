@@ -5,7 +5,7 @@
 const APP_ID = "AWVL7YWJ6V.com.seiya.sakutabi";
 // アプリ内のリンク（sakutabi://）。ユニバーサルリンクが効かないブラウザから開くためのボタンに使う
 const APP_SCHEME = "sakutabi";
-// App Store に登録したら URL を入れる。null の間は「近日公開」と表示する
+// App Store に登録したら URL を入れる。null の間は「App Store での公開は近日予定です。」と表示する
 const APP_STORE_URL = null;
 // 招待トークンは英数字22文字（API の invites.token と同じ形）
 const TOKEN_PATTERN = /^[A-Za-z0-9]{22}$/;
