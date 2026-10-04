@@ -2,6 +2,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sakutabi-site",
   "compatibility_date": "2026-09-25",
+  // 招待リンク /i/<token> と AASA だけ Worker で返す。それ以外は public/ の静的ファイル
+  "main": "src/index.js",
   // アクセスログを Cloudflare 側に持たない。
   // App Privacy で申告する収集データと揃えるため（karada-log-site と同じ方針）。
   "observability": {
@@ -9,6 +11,7 @@
   },
   "assets": {
     "directory": "./public",
+    "binding": "ASSETS",
     // App Store Connect とアプリ内リンクは .html 付きのURLを指す。
     // 既定の auto-trailing-slash は /privacy.html を /privacy へ 307 で飛ばすため、
     // .html をそのまま 200 で返す "none" にする。
